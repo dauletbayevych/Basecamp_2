@@ -17,7 +17,7 @@ rails server
 rails s
 ```
 
-### The Core Team
+
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
