@@ -1,0 +1,158 @@
+<html>
+<body>
+<div class="Attachmentbek"
+<p style="color: green"><%= notice %></p>
+
+<h1>Attachments</h1>
+<%= link_to "Back", project_path(@project) %>
+
+<%= form_with(model: @ataman) do |form| %>
+
+  <div>
+    <%= form.text_field :project_id, type: :hidden %>
+  </div>
+
+  <%= form.file_field :atr, required: :true %>
+
+  <div>
+    <%= form.submit 'Upload' %>
+  </div>
+<% end %>
+
+
+
+<div id="atamen">
+  <% @atamen.each do |ataman| %>
+    
+    <% if ataman.atr.attached? %>
+      
+      <% if ataman.atr.image? %>
+        <%= link_to image_tag(ataman.atr, class: "img"),  rails_blob_path(ataman.atr, disposition: "attachment") %> <br>
+      
+       <% elsif ataman.atr.audio? %>
+        <h2 class="entry-title"><%= ataman.atr.filename %>
+          <audio controls>
+            <source src=" <%= rails_blob_url(ataman.atr, disposition: "attachment") %>" type="audio/mpeg"/>
+          </audio>
+        </h2> <br>
+        <% else %>
+        <%= link_to ataman.atr.filename,  rails_blob_path(ataman.atr, disposition: "attachment") %> <br>
+      <% end %>
+      
+    <% end %>
+    <%= link_to "Destroy this attachment", ataman, 'data-turbo-method': :delete %> <br>
+    
+  <% end %>
+</div>
+
+</div>
+</body>
+</html>
+
+
+<style>
+
+.img{
+   border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+  }
+  
+  .Attachmentbek {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #4CAF50;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #4CAF50;
+  }
+  
+  .back-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .back-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #fff;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .back-link a:hover {
+    background-color: #eee;
+    color: #4CAF50;
+  }
+  
+</style>
+</style>

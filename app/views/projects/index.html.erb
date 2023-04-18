@@ -1,0 +1,60 @@
+<html>
+<body>
+<div class="newpr"
+<p style="color: green"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<div id="projects">
+  <% @projects.each do |project| %>
+    <%= render project %>
+    <p>
+      <%= link_to "Show this project", project %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New project", new_project_path %>
+
+</div>
+</body>
+</html>
+
+<style>
+  /* Style for the "Projects" heading */
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Style for the "New project" link */
+  a {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* Style for the "Show this project" link */
+  p a {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* Style for the "Notice" paragraph */
+  p.notice {
+    color: green;
+  }
+</style>

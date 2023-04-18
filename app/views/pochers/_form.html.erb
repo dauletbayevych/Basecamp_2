@@ -1,0 +1,17 @@
+<%= form_with(model: pocher) do |form| %>
+
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :poch_id, style: "display: block" %>
+    <%= form.text_field :poch_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

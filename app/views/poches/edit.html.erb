@@ -1,0 +1,70 @@
+<html>
+<body>
+<div class="pochedits"
+<h1>Editing poch</h1>
+
+<%= render "form", poch: @poch %>
+
+<br>
+
+<div>
+  <%= link_to "Show this poch", project_poch_path(@poch.project,@poch) %> |
+  <%= link_to "Back to poches", project_poches_path(@poch.project) %>
+</div>
+
+</div>
+</body>
+</html>
+
+<style>
+  /* Set a background color for the body */
+  body {
+    background-color: #f2f2f2;
+  }
+  
+  /* Center the pochedits div */
+  .pochedits {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the h1 element */
+  h1 {
+    color: #333;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the links */
+  a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Style the links on hover */
+  a:hover {
+    color: #666;
+  }
+  
+  /* Style the buttons */
+  button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Style the buttons on hover */
+  button:hover {
+    background-color: #666;
+  }
+</style> 

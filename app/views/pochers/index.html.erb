@@ -1,0 +1,15 @@
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Pochers</h1>
+
+<div id="pochers">
+  <% @pochers.each do |pocher| %>
+    <%= render pocher %>
+    <p>
+      <%= link_to "Show this pocher", pocher %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pocher", new_pocher_path %>

@@ -1,0 +1,157 @@
+<html>
+<body>
+<div class="prbeknurs"
+<% if notice %>
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+  <!-- Position it: -->
+  <!-- - `.toast-container` for spacing between toasts -->
+  <!-- - `top-0` & `end-0` to position the toasts in the upper right corner -->
+  <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->
+  <div class="toast-container top-0 end-0 p-3">
+
+    <!-- Then put toasts within -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <%# <img src="..." class="rounded me-2" alt="..."> %>
+        <%# <strong class="me-auto">Message</strong> %>
+        <p class="text-body-secondary"><%= notice %></p>
+        <%# <button type="button" class="btn-close float-end" data-bs-dismiss="toast" aria-label="Close"></button> %>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+
+      </div>
+      <%# <div class="toast-body">
+        See? Just like this.
+      </div> %>
+    </div>
+
+</div>
+<% end %>
+
+
+<%= render @poch %>
+
+<div>
+  <%= link_to "Edit this poch", edit_project_poch_path(@poch.project,@poch) %> |
+  <%= link_to "Back to poches", project_poches_path(@poch.project) %>
+
+  <%= button_to "Destroy this Message Board", @poch, method: :delete %>
+</div>
+
+<div>
+<%= form_with(model: @pocher) do |form| %>
+
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= form.text_field :poch_id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>
+
+<div>
+<% @pochers.each do |pocher| %>
+
+<%# <% if pocher.id %> 
+  <%= pocher.title %> <br>
+  <%= button_to "Destroy this Message", pocher, method: :delete %> <br>
+<%# <% end %>
+
+<% end %>
+</div>
+
+</div>
+</body>
+</html>
+
+<style>
+.prbeknurs {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for the toast notification */
+.toast-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.toast {
+  width: 300px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-body-secondary {
+  color: #ccc;
+}
+
+/* Style for the form */
+form {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for the links and buttons */
+a, button {
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a:hover, button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+</style>

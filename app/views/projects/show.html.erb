@@ -1,0 +1,89 @@
+<html>
+<body>
+<div class="beknurb"
+<p style="color: green"><%= notice %></p>
+
+<%= render @project %>
+
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %>
+
+  <%= button_to "Destroy this project", @project, method: :delete %>
+</div>
+<br>
+<%= link_to "Message Boards", project_poches_path(@project) %> <br>
+<%= link_to "Attachment", project_atamen_path(@project) %> <br>
+<%= link_to "Todo", project_vazis_path(@project) %> <br>
+
+</div>
+</body>
+</html>
+
+<style>
+a {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+  .beknurb {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .button:hover {
+    background-color: #0069d9;
+    cursor: pointer;
+  }
+
+  .edit {
+    background-color: #28a745;
+  }
+
+  .edit:hover {
+    background-color: #218838;
+  }
+
+  .destroy {
+    background-color: #dc3545;
+  }
+
+  .destroy:hover {
+    background-color: #c82333;
+  }
+
+  .back {
+    background-color: #6c757d;
+  }
+
+  .back:hover {
+    background-color: #5a6268;
+  }
+</style>

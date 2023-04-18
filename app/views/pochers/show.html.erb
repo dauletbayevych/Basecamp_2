@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pocher %>
+
+<div>
+  <%= link_to "Edit this pocher", edit_pocher_path(@pocher) %> |
+  <%= link_to "Back to pochers", pochers_path %>
+
+  <%= button_to "Destroy this pocher", @pocher, method: :delete %>
+</div>

@@ -1,0 +1,86 @@
+<html>
+<body>
+<div class="beknur">
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</body>
+</html>
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+  }
+  .beknur {
+    width: 42%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #888888;
+    display: flex; /* Add this line to use flexbox */
+    flex-direction: column; /* Add this line to stack the elements vertically */
+    align-items: center; /* Add this line to center the elements horizontally */
+    position: relative; /* Add this line to set the position of the form to relative */
+    top: 205px; /* Add this line to move the form down by 50px */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .field {
+    margin-bottom: 10px;
+  }
+  .actions {
+    text-align: center;
+  }
+  input[type=email], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px #888888;
+  }
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type=submit]:hover {
+    background-color: #3e8e41;
+  }
+</style>
+

@@ -1,0 +1,69 @@
+<html>
+<body>
+<div class="pochnew"
+<h1>New poch</h1>
+
+<%= render "form", poch: @poch %>
+
+<br>
+
+<div>
+  <%= link_to "Back to poches", project_poches_path(@project) %>
+</div>
+
+</div>
+</body>
+</html>
+
+<style>
+  .pochnew {
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #3e8e41;
+  }
+</style>

@@ -1,0 +1,80 @@
+<html>
+<body>
+<div class="pochbek"
+<p style="color: green"><%= notice %></p>
+
+<h1>Poches</h1>
+
+<div id="poches">
+  <% @poches.each do |poch| %>
+    <%= render poch %>
+    <p>
+      <%= link_to "Show this poch", project_poch_path(@project,poch) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New poch", new_project_poch_path(@project) %> <br>
+
+<%= link_to "Back", project_path(@project) %>
+
+</div>
+</body>
+</html>
+
+<style>
+  .pochbek {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .poch {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .poch h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .poch p {
+    margin: 0;
+  }
+  poches {
+    margin-top: 20px;
+  }
+  poches:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .poch-link {
+    float: left;
+    margin-right: 10px;
+  }
+  .poch-actions {
+    float: right;
+    margin-left: 10px;
+  }
+  .poch-actions a {
+    color: white;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .poch-actions a:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  .poch-actions a.delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .poch-actions a.delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+</style>
