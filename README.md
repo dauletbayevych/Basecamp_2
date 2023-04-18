@@ -2,12 +2,20 @@
 ***QWASAR My Basecamp 2***
 
 ## Installation
-```1.bundle install  ```  
-```2.rails db:migrate ```  
-```3.rails server ```
+```
+bundle install
+```  
+```
+rails db:migrate 
+```  
+```
+rails server
+```
 
 ## Usage
-```rails s```
+```
+rails s
+```
 
 ### The Core Team
 
